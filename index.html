@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Главная страница</title>
+    <style>
+        body {
+            background-color: #f0f8ff; /* Светлый фон */
+            font-family: Arial, sans-serif; /* Шрифт */
+            color: #333; /* Цвет текста */
+            margin: 0;
+            padding: 20px; 
+        }
+        h1 {
+            color: #2c3e50; /* Цвет заголовка */
+            text-align: center; /* Центрирование заголовка */
+        }
+        p {
+            font-size: 18px; /* Размер шрифта для параграфов */
+            line-height: 1.6; /* Межстрочный интервал */
+            margin: 10px 0; /* Отступы сверху и снизу */
+        }
+        a {
+            display: inline-block; /* Блок для ссылки */
+            margin-top: 20px; /* Отступ сверху */
+            padding: 10px 20px; /* Отступы внутри ссылки */
+            background-color: #3498db; /* Цвет фона ссылки */
+            color: white; /* Цвет текста ссылки */
+            text-decoration: none; /* Убираем подчеркивание */
+            border-radius: 5px; /* Закругленные углы */
+            transition: background-color 0.3s; /* Плавный переход цвета */
+        }
+        a:hover {
+            background-color: #2980b9; /* Цвет ссылки при наведении */
+        }
+    </style>
+</head>
+<body>
+    <h1>Лабораторная работа № 5</h1> 
+    <p>Описание лабораторной работы. 
+        Изучение механизмов авторизации и регистрации при использовании микрофреймворка Flask.</p>
+    <p>Добро пожаловать, {{ name }}!</p>
+    <a href="{{ url_for('logout') }}">Выход</a>
+</body>
+</html>
