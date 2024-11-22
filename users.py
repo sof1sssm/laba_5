@@ -8,4 +8,4 @@ class User(UserMixin):
         self.name = name
 
 # Заглушка для хранения пользователей
-users_db = {} это users.py
+users_db = {} 
