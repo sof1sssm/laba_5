@@ -2,11 +2,11 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8"> #Устанавливает кодировку документа на UTF-8, что позволяет корректно отображать символы различных языков
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> #устанавливая ширину в соответствии с шириной экрана устройства
-    <title>Регистрация</title> #Устанавливает заголовок страницы
-    <style> #CSS-стили, которые применяются к элементам на странице
-        body { #Определяет стили для всего тела страницы
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Регистрация</title> 
+    <style> 
+        body { 
             background-color: #f0f8ff; /* Светлый фон */
             font-family: 'Arial', sans-serif; /* Шрифт */
             color: #333; /* Цвет текста */
@@ -63,18 +63,18 @@
     </style>
 </head>
 <body>
-    <div class="container"> #Создает контейнер для формы регистрации с классом container
+    <div class="container"> 
         <h1>Форма регистрации</h1> 
-        {% with messages = get_flashed_messages(with_categories=true) %} #Использует шаблонный синтаксис Jinja2 для временных сообщений (ошибка, увед)
-          {% if messages %} # Проверяет, есть ли сообщения для отображения
-            <ul> #Открывает ненумерованный список для отображения сообщений
-            {% for category, message in messages %} #Перебирает каждое сообщение и его категорию (например, "error" или "success")
-              <li class="{{ category }}">{{ message }}</li> #Создает элемент списка для каждого сообщения, применяя соответствующий класс для стилизации.
+        {% with messages = get_flashed_messages(with_categories=true) %} 
+          {% if messages %} 
+            <ul> 
+            {% for category, message in messages %} 
+              <li class="{{ category }}">{{ message }}</li> 
             {% endfor %}
             </ul>
           {% endif %}
         {% endwith %}
-        <form method="POST"> #Открывает форму, которая будет отправлять данные методом POST на сервер
+        <form method="POST"> 
             <input type="text" name="name" required placeholder="Имя">   
             <input type="email" name="email" required placeholder="Email">
             <input type="password" name="password" required placeholder="Пароль">
