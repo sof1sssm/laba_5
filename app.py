@@ -2,7 +2,6 @@
 from flask import Flask, render_template, redirect, url_for, request, flash
 from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
 from users import User, users_db # Импортируем модель пользователя и базу данных
-import re #Импортирует модуль регулярных выражений
 
 app = Flask(__name__) #Создает экземпляр приложения Flask, name - указывает на текущее имя модуля
 login_manager = LoginManager(app) #создает экземпляр, который будет управлять аутентификацией пользователей
