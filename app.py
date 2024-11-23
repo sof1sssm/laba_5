@@ -7,13 +7,6 @@ app = Flask(__name__) #Создает экземпляр приложения Fl
 login_manager = LoginManager(app) #создает экземпляр, который будет управлять аутентификацией пользователей
 login_manager.login_view = 'login' #если пользователь не аутентифицирован, он будет перенаправлен на маршрут login
 
-class User(UserMixin): #класс User, наследует от UserMixin, предоставляя методы для аутентификации
-    def __init__(self, id, email, password, name): #Конструктор класса, инициализирует атрибуты пользователя
-        self.id = id #присваивает значение id атрибуту id экземпляра пользователя
-        self.email = email #присваивает значение email атрибуту email
-        self.password = password # присваивает значение password атрибуту password
-        self.name = name # присваивает значение name атрибуту name
-
 @login_manager.user_loader #Декоратор, регистрирует функцию для загрузки пользователя по его идентификатору
 def load_user(user_id): #Функция, которая возвращает пользователя из users_db по его идентификатору
     return users_db.get(user_id)
